@@ -17,7 +17,7 @@
     <section class="section section__add-task">
       <h3>Add Item</h3>
       <div class="add-task">
-        <input class="add-task__input" type="text">
+        <input class="inp add-task__input" type="text">
         <button class="btn btn__add-task">Add</button>
       </div>
     </section>
@@ -28,19 +28,19 @@
         <li class="task">
           <input type="checkbox" class="task__check">
           <span class="task__title">Pay Bills</span>
-          <input type="text" class="task__input">
+          <input type="text" class="inp task__input">
           <button class="btn btn__edit">Edit</button>
           <button class="btn btn__delete">
-            <img src="./remove.svg" alt="Remove button">
+            <img src="./remove.svg" alt="Remove button" class="btn__delete_img">
           </button>
         </li>
         <li class="task task_edit">
           <input type="checkbox" class="task__check">
           <span class="task__title">Go Shopping</span>
-          <input type="text" value="Go Shopping" class="task__input">
+          <input type="text" value="Go Shopping" class="inp task__input">
           <button class="btn btn__edit">Save</button>
           <button class="btn btn__delete">
-            <img src="./remove.svg" alt="Remove button">
+            <img src="./remove.svg" alt="Remove button" class="btn__delete_img">
           </button>
         </li>
       </ul>
@@ -52,9 +52,11 @@
         <li class="task">
           <input type="checkbox" class="task__check" checked>
           <span class="task__title">See the Doctor</span>
-          <input type="text" class="task__input">
+          <input type="text" class="inp task__input">
           <button class="btn btn__edit">Edit</button>
-          <button class="ntn btn__delete"><img src="./remove.svg" alt="Remove button"></button>
+          <button class="btn btn__delete">
+            <img src="./remove.svg" alt="Remove button" class="btn__delete_img">
+          </button>
         </li>
       </ul>
     </section>

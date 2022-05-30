@@ -19,7 +19,7 @@ var createNewTaskElement = function (taskString) {
   //input (checkbox)
   var checkBox = document.createElement('input'); //checkbx
   //label
-  var label = document.createElement('label'); //label
+  var title = document.createElement('span');
   //input (text)
   var editInput = document.createElement('input'); //text
   //button.edit
@@ -29,24 +29,28 @@ var createNewTaskElement = function (taskString) {
   var deleteButton = document.createElement('button'); //delete button
   var deleteButtonImg = document.createElement('img'); //delete button image
 
-  label.innerText = taskString;
-  label.className = 'task';
+  listItem.classList.add('task');
+
+  title.innerText = taskString;
+  title.className = 'task__title';
 
   //Each elements, needs appending
   checkBox.type = 'checkbox';
+  checkBox.className = 'task__check';
   editInput.type = 'text';
   editInput.className = 'task__input';
 
   editButton.innerText = 'Edit'; //innerText encodes special characters, HTML does not.
-  editButton.className = 'edit';
+  editButton.classList.add('btn', 'btn__edit');
 
-  deleteButton.className = 'delete';
+  deleteButton.classList.add('btn', 'btn__delete');
   deleteButtonImg.src = './remove.svg';
+  deleteButtonImg.classList.add('btn__delete_img');
   deleteButton.appendChild(deleteButtonImg);
 
   //and appending.
   listItem.appendChild(checkBox);
-  listItem.appendChild(label);
+  listItem.appendChild(title);
   listItem.appendChild(editInput);
   listItem.appendChild(editButton);
   listItem.appendChild(deleteButton);
@@ -74,9 +78,9 @@ var editTask = function () {
 
   var listItem = this.parentNode;
 
-  var editInput = listItem.querySelector('input[type=text]');
-  var label = listItem.querySelector('label');
-  var editBtn = listItem.querySelector('.edit');
+  var editInput = listItem.querySelector('.task__input');
+  var label = listItem.querySelector('.task__title');
+  var editBtn = listItem.querySelector('.btn__edit');
   var containsClass = listItem.classList.contains('task_edit');
   //If class of the parent is .task_edit
   if (containsClass) {
